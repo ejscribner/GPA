@@ -35,8 +35,7 @@ public class mainForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String[] grades = {grade1.getText(), grade2.getText(), grade3.getText(), grade4.getText(), grade5.getText(), grade6.getText(), grade7.getText()};
-                /* originally commented this line below */
-                String[] credits = {cred1.getText(), cred2.getText(), cred3.getText(), cred4.getText(), cred5.getText(), cred6.getText(), cred7.getText()};
+                //String[] credits = {cred1.getText(), cred2.getText(), cred3.getText(), cred4.getText(), cred5.getText(), cred6.getText(), cred7.getText()};
                 double myGPA = avgGPA(grades);
                 myGPA = Math.round(myGPA*100.00);
                 myGPA = myGPA/100.00;
