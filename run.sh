@@ -1,0 +1,1 @@
+java -cp target/gpa-calculator-1.0-SNAPSHOT.jar com.escribner.gpa.mainForm
