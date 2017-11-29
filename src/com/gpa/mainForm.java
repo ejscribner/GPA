@@ -1,8 +1,5 @@
 /*
     Created By: Elliot J Scribner on 11/24/17
-    Student ID: ejs320
-    Lab #: **Num**
-    mainForm: **Description**
  */
 
 package com.gpa;
@@ -18,27 +15,27 @@ public class mainForm {
     private JPanel mainPanel;
     private JButton submit;
     private JTextField grade1;
-    private JTextField cred1;
     private JTextField grade2;
     private JTextField grade3;
-    private JTextField cred2;
-    private JTextField cred3;
     private JTextField grade4;
     private JTextField grade5;
+    private JTextField grade6;
+    private JTextField grade7;
+    private JTextField cred1;
+    private JTextField cred2;
+    private JTextField cred3;
     private JTextField cred4;
     private JTextField cred5;
     private JTextField cred6;
     private JTextField cred7;
-    private JTextField grade6;
-    private JTextField grade7;
+
 
     public mainForm() {
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String myCred = cred1.getText();
                 String[] grades = {grade1.getText(), grade2.getText(), grade3.getText(), grade4.getText(), grade5.getText(), grade6.getText(), grade7.getText()};
-                //int intCred = Integer.parseInt(myCred);
+                //String[] credits = {cred1.getText(), cred2.getText(), cred3.getText(), cred4.getText(), cred5.getText(), cred6.getText(), cred7.getText()};
                 double myGPA = avgGPA(grades);
                 myGPA = Math.round(myGPA*100.00);
                 myGPA = myGPA/100.00;
@@ -54,6 +51,8 @@ public class mainForm {
         for(int j = 0; j < grades.length; j++) {
             String currGrade = grades[j];
             Double currGradeNum = letToNum(currGrade);
+            //credits = creditErrors(credits);
+            //int currCreds = Integer.parseInt(credits[j]);
             if(currGradeNum != -40.0) {
                 for (int i = 0; i < grades.length; i++) {
                     sum += currGradeNum;
@@ -64,6 +63,19 @@ public class mainForm {
         avg = sum/counts;
         return avg;
     }
+
+//    public static String[] creditErrors(String[] credits) {
+//        for(int i = 0; i < credits.length; i++) {
+//            try {
+//                int val = Integer.parseInt(credits[i]);
+//            } catch (NumberFormatException e) {
+//                credits[i] = "0";
+//            }
+//        }
+//        return credits;
+//    }
+
+
 
     public static double letToNum(String grade) {
         double numGrade = 0;
